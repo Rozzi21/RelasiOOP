@@ -1,33 +1,31 @@
+import java.util.List;
 
+class Mahasiswa {
+    private String id;
+    private String namaMahasiswa;
+}
 
-    public static final void main(String[] args) {
+class Matakuliah {
+    private String kodeMatkul;
+    private String namaMatkul;
+    private List<Mahasiswa> mahasiswa;
+}
 
-        User user = new User("1234", "Khrisna", new Address("123", "Bandung"));
-        
-    }
+class KartuRencanaStudi {
+    private String id;
+    private String namaMahasiswa;
+    private Matakuliah matakuliah;
 
-    class User {
-        private String id;
-        private String name;
-        private Address address;
-
-        public User(String id, String name, Address address) {
-            this.id = id;
-            this.name = name;
-            this.address = address;
-        }
-    
-    }
-
-    class Address {
-        private String id;
-        private String location;;
-
-        public Address(String id, String location) {
-            this.id = id;
-            this.location = location;
-        }
+    public KartuRencanaStudi(String id, String namaMahasiswa){
+        this.id = id;
+        this.namaMahasiswa = namaMahasiswa;
     }
     
-     
+    public void setMatakuliah(Matakuliah value){
+        this.matakuliah = value;
+    }
 
+    public final Matakuliah getMatakuliah(){
+        return matakuliah;
+    }
+}
